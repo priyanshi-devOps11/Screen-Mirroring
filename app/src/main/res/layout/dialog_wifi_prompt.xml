@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/colorSurface"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    android:layout_margin="32dp">
+    <!-- Custom Icon for Wi-Fi -->
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_wifi_alert"
+        android:tint="@color/colorPrimary"
+        android:background="@drawable/circle_orange_bg"
+        android:padding="12dp"
+        android:contentDescription="Wi-Fi Required Icon"/>
+
+    <!-- Title/Message -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wi-Fi is required to connect, please turn it on first."
+        android:textColor="@color/textColorPrimary"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="24dp"
+        android:lineSpacingExtra="4dp"/>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="16dp">
+
+        <!-- Cancel Button -->
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textColor="@color/textColorSecondary"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Turn On Button -->
+        <Button
+            android:id="@+id/btn_turn_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TURN ON"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

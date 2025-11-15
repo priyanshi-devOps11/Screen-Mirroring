@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Custom Dark Theme Palette -->
+    <color name="colorPrimary">#FFD16700</color> <!-- Bright Orange -->
+    <color name="colorAccent">#FF1DD2A6</color>  <!-- Teal/Green -->
+    <color name="colorBackground">#FF1C1D21</color> <!-- Main Dark Background -->
+    <color name="colorSurface">#FF272A30</color>    <!-- Card/Surface Background -->
+    <color name="textColorPrimary">#FFFFFFFF</color> <!-- White text on dark background -->
+    <color name="textColorSecondary">#FFAAAAAA</color> <!-- Grayish text-->
+
+    <color name="proBadgeColor">#FFC67EFF</color> <!-- Purple for the PRO badge -->
+</resources>

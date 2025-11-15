@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.screenmirroring">
+
+    <!-- Permissions required for connectivity and device discovery -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- MainActivity: The launch screen -->
+        <activity
+            android:name="com.example.screenmirroring.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- SettingsActivity -->
+        <activity
+            android:name="com.example.screenmirroring.SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName="com.example.screenmirroring.MainActivity"
+            android:theme="@style/AppTheme"/>
+
+        <!-- CastActivity -->
+        <activity
+            android:name="com.example.screenmirroring.CastActivity"
+            android:label="Cast"
+            android:parentActivityName="com.example.screenmirroring.MainActivity"
+            android:theme="@style/AppTheme"/>
+
+    </application>
+
+</manifest>
