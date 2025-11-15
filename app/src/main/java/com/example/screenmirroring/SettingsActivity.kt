@@ -11,24 +11,30 @@ import android.view.View
 
 class SettingsActivity : AppCompatActivity() {
 
-    private val APP_SHARE_LINK = "https://play.google.com/store/apps/details?id=${packageName}"
-    private val SHARE_TEXT = "Check out All Mirror for easy screen mirroring: $APP_SHARE_LINK"
+    // 1. FIX: Declare variables using 'lateinit'
+    private lateinit var APP_SHARE_LINK: String
+    private lateinit var SHARE_TEXT: String
     private val SHARE_SUBJECT = "Recommend All Mirror App"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
+        // 2. FIX: Initialize variables inside onCreate() where packageName is ready
+        APP_SHARE_LINK = "https://play.google.com/store/apps/details?id=${applicationContext.packageName}"
+        SHARE_TEXT = "Check out All Mirror for easy screen mirroring: $APP_SHARE_LINK"
 
         val toolbar: Toolbar = findViewById(R.id.toolbar_settings)
         setSupportActionBar(toolbar)
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
 
         toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
+
+        // --- Click Listeners ---
+
+        // General
         findViewById<View>(R.id.setting_tutorial)?.setOnClickListener {
             Toast.makeText(this, "Opening Tutorial & FAQ...", Toast.LENGTH_SHORT).show()
             // TODO: Launch your internal Tutorial/FAQ Activity here
@@ -41,10 +47,11 @@ class SettingsActivity : AppCompatActivity() {
             Toast.makeText(this, "Opening Language Selector...", Toast.LENGTH_SHORT).show()
             // TODO: Implement language change dialog/activity here
         }
+
+        // Share
         findViewById<View>(R.id.share_messenger)?.setOnClickListener {
             shareApp()
         }
-        // Share via Telegram (ID: share_telegram)
         findViewById<View>(R.id.share_telegram)?.setOnClickListener {
             shareApp()
         }
@@ -54,6 +61,8 @@ class SettingsActivity : AppCompatActivity() {
         findViewById<View>(R.id.share_more)?.setOnClickListener {
             shareApp()
         }
+
+        // About
         findViewById<TextView>(R.id.setting_privacy)?.setOnClickListener {
             openUrl("https://www.example.com/privacy", "Opening Privacy Policy...")
         }
@@ -61,6 +70,7 @@ class SettingsActivity : AppCompatActivity() {
             openUrl("https://www.example.com/terms", "Opening Terms of Use...")
         }
     }
+
     private fun shareApp() {
         Toast.makeText(this, "Opening Share Options...", Toast.LENGTH_SHORT).show()
 
