@@ -15,17 +15,17 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var APP_SHARE_LINK: String
     private lateinit var SHARE_TEXT: String
     private val SHARE_SUBJECT = "Recommend All Mirror App"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         APP_SHARE_LINK = "https://play.google.com/store/apps/details?id=${applicationContext.packageName}"
         SHARE_TEXT = "Check out All Mirror for easy screen mirroring: $APP_SHARE_LINK"
 
+
+
         val toolbar: Toolbar = findViewById(R.id.toolbar_settings)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
